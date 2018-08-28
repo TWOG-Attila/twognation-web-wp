@@ -14,19 +14,43 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twognation' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'twognation' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'twognation' ), 'twognation', '<a href="https://www.twoghub.io/">Twog - Development</a>' );
-				?>
-		</div><!-- .site-info -->
+		
+		<div id="toTheTopArrow">
+			<i class="fa fa-angle-up"></i>
+		</div>
+
+		<div class="wrapper">
+			
+			<div class="contact clearfix">
+
+				<div class="address">
+					<h3>Contact</h3>
+					<p>Want to know more about possibilities<br> which esports can bring to you?<br> Contact us.</p>
+					<h6>info@twognation.com</h6> 
+				</div>
+
+				<div class="newsletter">
+					<h3>Newsletter</h3>
+					<form action="">
+						<input type="text" placeholder="Enter your email">
+						<button type="submit">Subscribe</button>
+					</form>
+				</div>
+
+			</div>
+
+			<div class="socials">
+				<ul>
+					<li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+				</ul>
+				<h6>&copy; 2018 by TwogNation</h6>
+			</div>
+
+		</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

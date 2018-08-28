@@ -16,6 +16,17 @@ Use it to make something cool, have fun, and share what you've learned with othe
 TwogNation is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
+
+/* COLORS */ 
+:root {
+	--main-color-blue: #010047;
+	--aux-color-blue: #4342cf;
+}
+
+#wpadminbar {
+	display: none;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -41,29 +52,397 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--aux-color-blue);
+	text-decoration: none;
+}
+
+button,
+button:active,
+button:focus {
+	outline: none;
+}
+
 /* End Reset */
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+	max-width: 1140px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+button {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* HEADER */
+
+#masthead {
+	background: var(--main-color-blue);
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+#masthead .wrapper {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-column-gap: 85px;
+	align-items: center;
+	position: relative;
+}
+
+#masthead .wrapper .logo {
+	width: 115px;
+}
+
+#masthead #primary-menu {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 30px;
+	justify-items: start;
+	align-items: center;
+}
+
+#masthead .wrapper button {
+	width: 110px;
+	height: 40px;
+	background-color: #fff;
+	color: var(--main-color-blue);
+	
+}
+
+.hamburger-menu {
+	width: 40px;
+	height: 23px;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+	width: 40px;
+	height: 3px;
+}
+
+.bar {
+	position: relative;
+	transform: translateY(10px);
+	background: rgba(255, 255, 255, 1);
+	transition: all 0ms 300ms;
+}
+
+.bar.animate {
+	background: rgba(255, 255, 255, 0);
+}
+
+.bar:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	background: rgba(255, 255, 255, 1);
+	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 10px;
+	background: rgba(255, 255, 255, 1);
+	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+.bar.animate:before {
+	bottom: 0;
+	transform: rotate(-45deg);
+	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+/* END HEADER */
+
+
+/* HERO BANNER */
+
+#hero-banner {
+	min-height: 100vh;
+	width: 100%;
+	background: url(/wp-content/themes/twognation/assets/hero-banner-background.jpg) no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+
+#hero-banner .inscription {
+	color: #fff;
+	top: 45vh;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+  transform: translateX(-50%);
+}
+
+#hero-banner .inscription h1 {
+	font-size: 40px;
+	font-weight: bolder;
+	margin-bottom: 40px;
+}
+
+#hero-banner .inscription h2 {
+	font-size: 20px;
+	font-weight: 200;
+	margin-bottom: 90px;
+}
+
+#hero-banner .inscription h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* ======================
+Scrolling
+====================== */
+
+.scroller {
+	position: relative;
+	display: block;
+}
+
+@-webkit-keyframes scroll {
+  0% {opacity: 1;}
+  100% {opacity: 0; -webkit-transform: translateY(25px); transform: translateY(25px);}
+}
+@keyframes scroll {
+  0% {opacity: 1;}
+  100% {opacity: 0; -webkit-transform: translateY(25px); -ms-transform: translateY(25px); transform: translateY(25px);}
+}
+
+.scroll-icon {
+	width: 28px;
+	height: 50px;
+	box-shadow: inset 0 0 0 1px white;
+	border-radius: 25px;
+  position: absolute;
+  top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.scroll-icon:before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	width: 4px;
+	height: 4px;
+	background: white;
+	top: 10px;
+	border-radius: 4px;
+	margin-left: -2px;
+	-webkit-animation: scroll infinite 2.5s;
+	animation: scroll infinite 2.5s;
+}
+
+/* HERO BANNER END*/
+
+.project {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.project .image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.project .info {
+	width: 100%;
+	padding: 0 50px;
+}
+
+.project .info h1 {
+	font-size: 40px;
+	color: var(--main-color-blue);
+	font-weight: 600;
+	line-height: 2;
+}
+
+.project .info h4 {
+	font-size: 16px;
+	line-height: 1.4;
+	color: var(--main-color-blue);
+	margin: 30px 0 35px;
+	display: inline-block;
+}
+
+.project .info a {
+	background: var(--main-color-blue);
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	padding: 12px 10px;
+	border-radius: 8px;
+	display: inline-block;
+	border: 1px solid var(--main-color-blue);
+	height: 40px;
+	width: 155px;
+	text-align: center;
+	align-self: end;
+}
+
+.project .info img {
+	width: 180px;
+	margin: 0 auto;
+}
+
+.project .info .link-logo {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+#twogbiz {
+	background-color: #f3f3f3;
+	padding: 100px 0;
+}
+
+#twognews {
+	padding: 40px 0;
+}
+
+#twognews h1 {
+	padding-top: 40px;
+}
+
+#twognews a {
+	color: #7e596d; 
+	border: 1px solid #7e596d;
+	background: transparent;
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 992px) {
+
+	#masthead .wrapper {
+		grid-row-gap: 20px;
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+
+	#masthead .wrapper .logo {
+    width: 150px;
+	}
+
+	#masthead #primary-menu {
+		grid-template-columns: 1fr;
+		width: calc(100% + 40px);
+		background: var(--main-color-blue);
+		position: absolute;
+		top: 100%;
+		justify-items: center;
+		padding: 40px 0 20px;
+		display: none;
+	}
+
+	#masthead #primary-menu.show {
+		display: grid !important;
+	}
+
+	.hamburger-menu {
+		display: block;
+	}
+
+	.project {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-items: center;
+		grid-template-areas: 'info' 'image';
+		padding: 0 20px;
+	}
+
+	.project .image {
+		grid-area: image;
+	}
+
+	.project .info {
+		text-align: center;
+		grid-area: info;
+		padding: 0;
+	}
+
+	.project .info a {
+		align-self: center;
+    justify-self: center;
+	}
+
+	.project .info .link-logo {
+    grid-template-columns: 1fr 1fr;
+}
+
+	#twognews {
+    padding: 100px 0;
+	}
+}
+/* END MEDIA QUERIES */
 
