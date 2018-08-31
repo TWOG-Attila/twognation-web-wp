@@ -21,24 +21,61 @@ get_header();
         <h2>TwogNation is an esports focus holding company creating a
            1-stop-solution for gamers and industry stakeholders.</h2>
         <h3>Our projects</h3>
-        <a class="scroller" href="#">
+        <a class="scroller" href="#twoghub">
           <div class="scroll-icon"></div>
         </a>
       </div>
    </section>
 
+  <section id="twoghub">
+
+    <div class="project wrapper">
+      <div class="info">
+        <h1>TwogHub</h1>
+        <h4>is a competitive gaming aggregator platform providing unique features for gamers and industry stakeholders</h4>
+        <div class="link-logo">
+          <div>
+            <a style="margin-bottom: 20px;" href="https://www.twoghub.com/" target="_blank">GO TO HUB</a> 
+            <a href="https://www.twoghub.io/" target="_blank">LEARN MORE</a> 
+          </div>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/twoghub.svg" alt="TwogBiz">
+        </div>
+      </div>
+
+      <div class="macbook-slider-container">
+        <img class="macbook-image" src="<?php echo get_template_directory_uri(); ?>/assets/macbook-slider-stage.png">
+        <img class="ipad-image" src="<?php echo get_template_directory_uri(); ?>/assets/ipad-slider-stage.png">
+        <div class="slider-container">
+          <div class="ba-slider">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/passport-screen.jpg">       
+            
+            <div class="resize">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/tournament-screen.jpg">
+            </div>
+            
+            <span class="handle"></span>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
   <section id="twogbiz">
     <div class="project wrapper">  
       <div class="image">
-        <img src="/wp-content/themes/twognation/assets/biz-graphics.png" alt="TwogBiz">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/biz-graphics.png" alt="TwogBiz">
       </div>
 
       <div class="info">
         <h1>TwogBiz</h1>
-        <h4>is an esports agency catering to all businessneeds within the esportsand affiliated industries.</h4>
+        <h4>is an esports advisory agency providing full-cycle solutions for industry stakeholders – from strategy development to execution</h4>
         <div class="link-logo">
-          <a href="">VISIT WEBSITE</a> 
-          <img src="/wp-content/themes/twognation/assets/logos/twogbiz.svg" alt="TwogBiz">
+          <a href="https://twogbiz.com/" target="_blank">VISIT WEBSITE</a> 
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/twogbiz.svg" alt="TwogBiz">
         </div>
       </div>
     </div>
@@ -48,18 +85,24 @@ get_header();
     <div class="project wrapper">
       <div class="info">
         <h1>TwogNews</h1>
-        <h4>aggregates all esports news of game IPs, business and culture into one place, while adapting and summaraizing news content into a short and easy-to-digest TLDR format.</h4>
+        <h4>is an esports aggregator, which allows user to consume content in a customized and short format</h4>
         <div class="link-logo">
           <a>COMING SOON</a>
-          <img src="/wp-content/themes/twognation/assets/logos/twognews.svg" alt="TwogNews">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/twognews.svg" alt="TwogNews">
         </div>
       </div>
 
       <div class="image">
-        <img src="/wp-content/themes/twognation/assets/news-graphics.png" alt="TwogNews">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/news-graphics.png" alt="TwogNews">
       </div>
     </div>
   </section>
 
+  <?php  get_template_part( 'template-parts/our-team' ) ?>
+
+  <?php  get_template_part( 'template-parts/news-feed' ) ?>
+
+  <?php get_template_part('template-parts/partners-and-clients') ?>	
+
 <?php
-// get_footer();
+get_footer();

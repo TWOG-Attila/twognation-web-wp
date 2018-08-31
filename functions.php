@@ -122,15 +122,17 @@ add_action( 'widgets_init', 'twognation_widgets_init' );
 function twognation_scripts() {
 	wp_enqueue_style( 'bootstrap-4', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
 
-	wp_enqueue_style( 'slick-slider-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+	wp_enqueue_style( 'slick-slider-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css');
 
 	wp_enqueue_style( 'twognation-style', get_stylesheet_uri() );
 
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
 
-	wp_enqueue_script( 'slick-slider-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'slick-slider-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.min.js', array('jquery'), null, true );
+
+	wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', array('jquery'), null, true );
 
@@ -139,7 +141,6 @@ function twognation_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'twognation_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */

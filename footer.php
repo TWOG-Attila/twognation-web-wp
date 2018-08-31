@@ -11,47 +11,40 @@
 
 ?>
 
-	</div><!-- #content -->
+    </div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		
-		<div id="toTheTopArrow">
-			<i class="fa fa-angle-up"></i>
-		</div>
+    <footer id="colophon" class="site-footer">
 
-		<div class="wrapper">
-			
-			<div class="contact clearfix">
+        <a href="#content" id="toTheTopArrow">
+            <i class="fa fa-angle-up"></i>
+        </a>
 
-				<div class="address">
-					<h3>Contact</h3>
-					<p>Want to know more about possibilities<br> which esports can bring to you?<br> Contact us.</p>
-					<h6>info@twognation.com</h6> 
-				</div>
+        <div class="wrapper">
 
-				<div class="newsletter">
-					<h3>Newsletter</h3>
-					<form action="">
-						<input type="text" placeholder="Enter your email">
-						<button type="submit">Subscribe</button>
-					</form>
-				</div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>Want to know more about possibilities<br> which esports can bring to you?<br> Contact us.</p>
+                <label>info@twognation.com</label>
+            </div>
 
-			</div>
+            <div class="newsletter">
+                <h3>Newsletter</h3>
+                <form>
+                    <input type="text" placeholder="Enter your email" name="email">
+                    <button type="submit" name="subscribe">Subscribe</button>
+                </form>
+                <div class="response-placeholder"></div>
+            </div>
 
-			<div class="socials">
-				<ul>
-					<li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-				</ul>
-				<h6>&copy; 2018 by TwogNation</h6>
-			</div>
+            <div class="copyright">
+                <h5>&copy; 2018 by TwogNation</h5>
+                <h6><a href="#">Terms of Service</a></h6>
+                <h6><a href="#">Privacy Policy</a></h6>
+            </div>
 
-		</div>
+        </div>
 
-	</footer><!-- #colophon -->
+    </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
